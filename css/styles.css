@@ -1,0 +1,239 @@
+/*-------------------------------  Start Global Rules ------------------------------- */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-title);
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--main-color);
+}
+/*-------------------------------  End Global Rules ------------------------------- */
+
+/*-------------------------------  Start Global var ------------------------------- */
+:root {
+  --font-author: "Caveat", cursive;
+  --font-quote: "Faculty Glyphic", sans-serif;
+  --font-title: "Roboto", sans-serif;
+  --main-color: #16b6df;
+  --secondary-color: #e63946;
+  --background-overlay: rgba(0, 0, 0, 0.6);
+  --border-radius: 12px;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+/*-------------------------------  End Global var ------------------------------- */
+
+/*-------------------------------  Start Section Quote ------------------------------- */
+header {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      var(--background-overlay),
+      var(--background-overlay)
+    ),
+    url(../imgs/desk-3139127_1280.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  scroll-behavior: smooth;
+}
+
+header .quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+header .quote .container {
+  background-color: var(--background-overlay);
+  border-radius: var(--border-radius);
+  width: 85%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+header .quote h1 {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+header .quote h1::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: var(--main-color);
+  bottom: -5px;
+  left: 25%;
+}
+
+header .quote h1 span {
+  display: inline-block;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+header .quote .container .my-quote {
+  margin: 20px 0;
+  font-family: var(--font-quote);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.8;
+}
+
+header .quote .container .about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+header .quote .container .about .author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-author);
+}
+
+header .quote .container .about .author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+header .quote .container .about .author img:hover {
+  transform: scale(1.1);
+}
+
+header .quote .container .btnn .new {
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  background-color: transparent;
+  width: 160px;
+  height: 45px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+header .quote .container .btnn .new:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+header .quote .container .btnn .new::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(22, 182, 223, 0.2),
+    transparent
+  );
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+header .quote .container .btnn .new:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.my-icon {
+  line-height: 1.6;
+  height: 40px;
+  width: 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.my-icon:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.like:hover {
+  background-color: var(--secondary-color);
+}
+/*-------------------------------  End Section Quote ------------------------------- */
+
+/*-------------------------------  Media Queries ------------------------------- */
+@media (max-width: 767.98px) {
+  header .quote .container {
+    width: 90%;
+    padding: 15px;
+  }
+  .my-icon {
+    margin: 4px;
+    font-size: 1rem;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header .quote .container {
+    width: 95%;
+  }
+  header .quote h1 {
+    font-size: 1.8rem;
+  }
+}
